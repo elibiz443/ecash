@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :sends
 	get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
