@@ -1,25 +1,14 @@
 class HomesController < ApplicationController
   before_action :set_home, only: %i[ show edit update destroy ]
 
-  # GET /homes or /homes.json
   def index
     @homes = Home.all
   end
 
-  # GET /homes/1 or /homes/1.json
-  def show
-  end
-
-  # GET /homes/new
   def new
     @home = Home.new
   end
 
-  # GET /homes/1/edit
-  def edit
-  end
-
-  # POST /homes or /homes.json
   def create
     @home = Home.new(home_params)
 
@@ -34,7 +23,6 @@ class HomesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /homes/1 or /homes/1.json
   def update
     respond_to do |format|
       if @home.update(home_params)
@@ -47,7 +35,6 @@ class HomesController < ApplicationController
     end
   end
 
-  # DELETE /homes/1 or /homes/1.json
   def destroy
     @home.destroy
     respond_to do |format|
@@ -57,12 +44,10 @@ class HomesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_home
       @home = Home.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def home_params
       params.require(:home).permit(:detail)
     end

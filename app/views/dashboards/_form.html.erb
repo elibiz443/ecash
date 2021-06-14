@@ -1,0 +1,22 @@
+<%= form_with(model: dashboard) do |form| %>
+  <% if dashboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dashboard.errors.count, "error") %> prohibited this dashboard from being saved:</h2>
+
+      <ul>
+        <% dashboard.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_field :detail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
