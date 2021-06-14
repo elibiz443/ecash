@@ -1,36 +1,79 @@
-<header>
-  <!-- Header Start -->
-  <div class="header-area header-transparrent">
-    <div class="main-header header-sticky">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Logo -->
-          <div class="col-xl-2 col-lg-2 col-md-2">
-            <div class="logo">
-              <a href="/"><img src="assets/logo.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-xl-10 col-lg-10 col-md-10">
-            <!-- Main-menu -->
-            <div class="main-menu f-right d-none d-lg-block">
-              <nav>
-                <ul id="navigation">    
-                  <li class="active"><a href="/">Home</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#pricing">Pricing</a></li>
-                  <li><a href="#about">About Us</a></li>
-                  <li><a href="#contact">Contact</a></li>
+<!-- Header-->
+<header id="header">
+  <div class="container">
+    <div class="header-row">
+      <div class="header-column justify-content-start"> 
+        <!-- Logo -->
+        <div class="logo"> <a class="d-flex" href="/" title="eCash"><img src="assets/logo.png" width="121" height="33"  alt="eCash" /></a> </div>
+        <!-- Logo end --> 
+
+        <!-- Collapse Button-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav"> <span></span> <span></span> <span></span> </button>
+        <!-- Collapse Button end --> 
+        
+        <!-- Primary Navigation-->
+        <nav class="primary-menu navbar navbar-expand-lg">
+          <div id="header-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li><a href="#">Send</a></li>
+              <li><a href="#">Receive</a></li>
+              <li class="dropdown dropdown-mega"> <a class="dropdown-toggle" href="#">Settings</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <div class="dropdown-mega-content">
+                      <div class="row">
+                        <div class="col-lg"> <span class="sub-title">Account</Span>
+                          <ul class="dropdown-mega-submenu">
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Security</a></li>
+                            <li><a class="dropdown-item" href="#">Notifications</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg"> <span class="sub-title">Dashboard</Span>
+                          <ul class="dropdown-mega-submenu">
+                            <li><a class="dropdown-item" href="#">Transactions</a></li>
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Deposit Money</a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">MPesa</a></li>
+                                <li><a class="dropdown-item" href="#">Airtel Money</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Withdraw Money</a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">MPesa</a></li>
+                                <li><a class="dropdown-item" href="#">Airtel Money</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg"> <span class="sub-title">Others</Span>
+                          <ul class="dropdown-mega-submenu">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Fees</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
-              </nav>
-            </div>
+              </li>
+            </ul>
           </div>
-          <!-- Mobile Menu -->
-          <div class="col-12">
-            <div class="mobile_menu d-block d-lg-none"></div>
-          </div>
-        </div>
+        </nav>
+        <!-- Primary Navigation end --> 
+      </div>
+      <div class="header-column justify-content-end"> 
+        <!-- Login & Signup Link -->
+        <nav class="login-signup navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li><a href="#">Login</a> </li>
+            <li class="align-items-center h-auto ml-sm-3"><a class="btn btn-primary" href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+        <!-- Login & Signup Link end --> 
       </div>
     </div>
   </div>
-  <!-- Header End -->
 </header>
+<!-- Header End --> 
