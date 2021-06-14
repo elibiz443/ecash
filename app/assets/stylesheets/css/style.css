@@ -2664,7 +2664,7 @@ h2.resp-accordion:first-child {
   height: 30px;
   display: block;
   background: #fff;
-  border: 1px solid #28a745;
+  border: 1px solid #1c669f;
   top: 45px;
   left: 50%;
   margin-top: -15px;
@@ -2680,7 +2680,7 @@ h2.resp-accordion:first-child {
   left: 9px;
 }
 .widget-steps > .step.complete > .step-dot {
-  background: #28a745;
+  background: #1c669f;
 }
 .widget-steps > .step.complete > .step-dot:after {
   content: '\f00c';
@@ -2691,7 +2691,7 @@ h2.resp-accordion:first-child {
   left: 7px;
 }
 .widget-steps > .step.active > .step-dot:after {
-  background: #28a745;
+  background: #1c669f;
   content: '';
 }
 .widget-steps > .step > .progress {
@@ -2705,7 +2705,7 @@ h2.resp-accordion:first-child {
 .widget-steps > .step > .progress > .progress-bar {
   width: 0px;
   box-shadow: none;
-  background: #28a745;
+  background: #1c669f;
 }
 .widget-steps > .step.complete > .progress > .progress-bar {
   width: 100%;

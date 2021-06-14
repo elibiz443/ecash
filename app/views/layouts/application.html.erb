@@ -27,7 +27,15 @@
         <%= render 'shared/dashheader' %>
       <% end %>
 
-      <% unless controller_name == "dashboards" %>
+      <% if controller_name == "sends" %>
+        <%= render 'shared/dashheader' %>
+      <% end %>
+
+      <% if controller_name == "success" %>
+        <%= render 'shared/dashheader' %>
+      <% end %>
+
+      <% unless controller_name == "dashboards" || controller_name == "sends" || controller_name == "success" %>
         <%= render 'shared/header' %>
       <% end %>
         <%= yield %>
