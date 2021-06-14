@@ -3531,3 +3531,15 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 #styles-switcher #reset-color {
   background: #1f72b1;
 }
+
+/*custom css*/
+
+.section-margin--small {
+  margin: 35px 0
+}
+
+@media (min-width:1000px) {
+  .section-margin--small {
+    margin: 98px 0
+  }
+}

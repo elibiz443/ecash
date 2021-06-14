@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :homes
   resources :dashboards
-  
-  # root 'homes#index'
+
   root 'dashboards#index'
 end
