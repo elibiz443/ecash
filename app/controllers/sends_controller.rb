@@ -1,12 +1,12 @@
 class SendsController < ApplicationController
-  before_action :set_send, only: %i[ show edit update destroy ]
+  # before_action :set_send, only: %i[ show edit update destroy ]
 
   def index
     @sends = Send.all
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def new
     @send = Send.new

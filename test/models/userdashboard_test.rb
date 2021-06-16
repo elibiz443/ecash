@@ -1,6 +1,6 @@
 require "test_helper"
 
-class DashboardTest < ActiveSupport::TestCase
+class UserdashboardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

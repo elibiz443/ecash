@@ -23,7 +23,7 @@
   <body>
     <!-- Document Wrapper -->
     <div id="main-wrapper">
-      <% if controller_name == "dashboards" %>
+      <% if controller_name == "userdashboards" %>
         <%= render 'shared/dashheader' %>
       <% end %>
 
@@ -35,7 +35,7 @@
         <%= render 'shared/dashheader' %>
       <% end %>
 
-      <% unless controller_name == "dashboards" || controller_name == "sends" || controller_name == "success" %>
+      <% unless controller_name == "userdashboards" || controller_name == "sends" || controller_name == "success" %>
         <%= render 'shared/header' %>
       <% end %>
         <%= yield %>

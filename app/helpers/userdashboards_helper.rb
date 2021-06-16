@@ -1,4 +1,4 @@
-module DashboardsHelper
+module UserdashboardsHelper
 	def current_user
     @user ||= User.find(session[:user_id])
   end

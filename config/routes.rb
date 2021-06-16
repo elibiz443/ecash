@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :userdashboards
   resources :users
   resources :sends
 	get 'login', to: 'sessions#new'
@@ -7,8 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :users, only: [:new, :create]
   resources :home
-  resources :dashboards
   resources :success, only:[:index]
 
-  root 'dashboards#index'
+  root 'userdashboards#index'
 end
