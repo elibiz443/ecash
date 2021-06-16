@@ -16,6 +16,10 @@ Clone the project into your computer directory with:
 
 	git clone https://github.com/elibiz443/ecash.git
 
+cd into project directory, i.e
+
+	cd ecash
+
 Migrate the Database using:
 
 	rails db:create && rails db:migrate
@@ -23,6 +27,10 @@ Migrate the Database using:
 Run the rails server using:
 
 	rails s   (Afterwards, go to the link 'localhost:3000' in your favourite browser to access the page/app.)
+
+If you find this error 'Webpacker::Manifest::MissingEntryError...' Then run the line below in terminal
+
+	bundle exec rake webpacker:install
 
 Deploying to Heroku:
 

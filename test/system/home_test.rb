@@ -1,17 +1,17 @@
 require "application_system_test_case"
 
-class HomesTest < ApplicationSystemTestCase
+class HomeTest < ApplicationSystemTestCase
   setup do
-    @home = homes(:one)
+    @home = home(:one)
   end
 
   test "visiting the index" do
-    visit homes_url
-    assert_selector "h1", text: "Homes"
+    visit '/home'
+    assert_selector "h1", text: "Home"
   end
 
   test "creating a Home" do
-    visit homes_url
+    visit '/home'
     click_on "New Home"
 
     fill_in "Detail", with: @home.detail
@@ -22,7 +22,7 @@ class HomesTest < ApplicationSystemTestCase
   end
 
   test "updating a Home" do
-    visit homes_url
+    visit '/home'
     click_on "Edit", match: :first
 
     fill_in "Detail", with: @home.detail
@@ -33,7 +33,7 @@ class HomesTest < ApplicationSystemTestCase
   end
 
   test "destroying a Home" do
-    visit homes_url
+    visit '/home'
     page.accept_confirm do
       click_on "Destroy", match: :first
     end

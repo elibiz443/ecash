@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create]
   resources :users, only: [:new, :create]
-  resources :homes
+  resources :home
   resources :dashboards
   resources :success, only:[:index]
 
