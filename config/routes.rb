@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-  resources :userdashboards
-  resources :users
-  resources :sends
-	get 'login', to: 'sessions#new'
-  get 'logout', to: 'sessions#destroy'
+  namespace :admin do
+    resources :users, only: [:new, :create]
+    resources :sessions, only: [:create]
+    resources :dashboards
 
-  resources :sessions, only: [:create]
+    get 'login', to: 'sessions#new'
+    get 'logout', to: 'sessions#destroy'
+
+    root 'dashboards#index'
+  end
+
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:create]
   resources :home
+  resources :userdashboards
+  resources :sends
   resources :success, only:[:index]
+
+  get 'login', to: 'sessions#new'
+  get 'logout', to: 'sessions#destroy'
 
   root 'userdashboards#index'
 end

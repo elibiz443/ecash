@@ -1,0 +1,98 @@
+<!-- Content
+============================================= -->
+<div id="content" class="py-4">
+  <div class="container">
+    <div class="row"> 
+      <!-- Left Panel
+      ============================================= -->
+      <aside class="col-lg-3"> 
+        
+        <!-- Profile Details
+        =============================== -->
+        <div class="bg-white shadow-sm rounded text-center p-3 mb-4">
+          <div class="profile-thumb mt-3 mb-4"> <img class="rounded-circle" src="/assets/profile.jpg" alt="">
+            <div class="profile-thumb-edit custom-file bg-primary text-white" data-toggle="tooltip" title="Change Profile Picture"> <i class="fas fa-camera position-absolute"></i>
+              <input type="file" class="custom-file-input" id="customFile">
+            </div>
+          </div>
+          <p class="text-3 font-weight-500 mb-2">
+            Hello, <%= admin_current_user.first_name %>
+          </p>
+          <p class="mb-2"><a href="#" class="text-5 text-light" data-toggle="tooltip" title="Edit Profile"><i class="fas fa-edit"></i></a></p>
+        </div>
+        <!-- Profile Details End --> 
+        
+        <!-- Need Help?
+        =============================== -->
+        <div class="bg-white shadow-sm rounded text-center p-3 mb-4">
+          <div class="text-17 text-light my-3"><i class="fas fa-comments"></i></div>
+          <h3 class="text-5 font-weight-400 my-4">Need Help?</h3>
+          <p class="text-muted opacity-8 mb-4">Have questions or concerns regrading your account?<br>
+            Our experts are here to help!.</p>
+          <a href="#" class="btn btn-primary btn-block">Contact Us</a> </div>
+        <!-- Need Help? End --> 
+        
+      </aside>
+      <!-- Left Panel End --> 
+      
+      <!-- Middle Panel
+      ============================================= -->
+      <div class="col-lg-9"> 
+        
+        <!-- Profile Completeness
+        =============================== -->
+        <div class="bg-white shadow-sm rounded p-4 mb-4">
+          <h3>Admin Dashboard</h3>
+          <% if flash[:success] %>
+            <div class='alert alert-success'><%= flash[:success] %></div>
+          <% end %>
+
+          <h3 class="text-5 font-weight-400 d-flex align-items-center mb-4">Profile Completeness<span class="border text-success rounded-pill font-weight-500 text-2 px-3 py-1 ml-2">90%</span></h3>
+          <hr class="mb-4 mx-n4">
+          <div class="row profile-completeness">
+            <div class="col-sm-6 col-md-6 mb-4 mb-md-0">
+              <div class="border rounded text-center px-3 py-4"> <span class="d-block text-10 text-light mt-2 mb-3"><i class="fas fa-envelope"></i></span> <span class="text-5 d-block text-success mt-4 mb-3"><i class="fas fa-check-circle"></i></span>
+                <p class="mb-0">Email Added</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 mb-4 mb-sm-0">
+              <div class="border rounded text-center px-3 py-4"> <span class="d-block text-10 text-light mt-2 mb-3"><i class="fas fa-user"></i></span> <span class="text-5 d-block text-light mt-4 mb-3"><i class="far fa-circle "></i></span>
+                <p class="mb-0"><a class="btn-link stretched-link" href="#">Activate Account</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Profile Completeness End --> 
+        
+        <!-- Info =============================== -->
+        <div class="bg-white shadow-sm rounded py-4 mb-4">
+          <h3 class="text-5 font-weight-400 d-flex align-items-center px-4 mb-4">Acount Info</h3>
+          
+          <!-- Transaction List
+          =============================== -->
+          <div class="transaction-list">
+            <div class="transaction-item px-4 py-3" data-toggle="modal" data-target="#transaction-detail">
+              <div class="row align-items-center flex-row">
+                <div class="col-2 col-sm-1 text-center"> 
+                  <span class="d-block text-4 font-weight-300">
+                    <%= admin_current_user.first_name %>
+                  </span> 
+                  <span class="d-block text-1 font-weight-300 text-uppercase">
+                    <%= admin_current_user.last_name %>
+                  </span> 
+                </div>
+                <div class="col col-sm-7"> 
+                  <span class="d-block text-4"><%= admin_current_user.email %></span> 
+                  <span class="text-muted">Not Yet Activated!</span> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Info End --> 
+      </div>
+      <!-- Middle Panel End --> 
+    </div>
+  </div>
+</div>
+<!-- Content end --> 

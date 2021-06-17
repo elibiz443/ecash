@@ -1,0 +1,46 @@
+<!-- Header
+============================================= -->
+<header id="header">
+  <div class="container">
+    <div class="header-row">
+      <div class="header-column justify-content-start"> 
+        <!-- Logo -->
+        <div class="logo"> <a class="d-flex" href="/admin" title="eCash"><img src="/assets/logo.png" width="121" height="33"  alt="eCash" /></a> </div>
+        <!-- Logo end --> 
+      </div>
+
+      <div class="header-column justify-content-end"> 
+        <!-- My Profile
+        ============================== -->
+        <nav class="login-signup navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="dropdown profile ml-2"> <a class="px-0 dropdown-toggle" href="#"><img class="rounded-circle" src="/assets/profile2.jpg" alt=""></a>
+              <ul class="dropdown-menu">
+                <li class="text-center text-3 py-2">Hi, <%= admin_current_user.first_name %></li>
+                <li class="dropdown-divider mx-n3"></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i>My Profile</a></li>
+                <li class="dropdown-divider mx-n3"></li>
+                <li>
+                  <a class="dropdown-item" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sign out
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown notifications"> <a class="dropdown-toggle" href="#"><span class="text-5"><i class="far fa-bell"></i></span><span class="count">1</span></a>
+              <ul class="dropdown-menu">
+                <li class="text-center text-3 py-2">Notifications (1)</li>
+                <li class="dropdown-divider mx-n3"></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-bell"></i>Welcome to your dashboard.<span class="text-1 text-muted d-block"><%= Time.now %></span></a></li>
+                <li><a class="dropdown-item text-center text-primary px-0" href="notifications.html">See all Notifications</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- My Profile end --> 
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header End --> 

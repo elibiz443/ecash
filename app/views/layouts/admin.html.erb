@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>eCASH</title>
+    <title>Admin Panel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
@@ -22,24 +22,19 @@
   </head>
   <body>
     <div id="main-wrapper">
-      <% if controller_name == "userdashboards" %>
-        <%= render 'shared/dashheader' %>
+      <% if controller_name == "dashboards" %>
+        <%= render 'shared/adminheader' %>
       <% end %>
 
-      <% if controller_name == "sends" %>
-        <%= render 'shared/dashheader' %>
+      <% unless controller_name == "dashboards" %>
+        <%= render 'shared/admin_login_header' %>
       <% end %>
 
-      <% if controller_name == "success" %>
-        <%= render 'shared/dashheader' %>
-      <% end %>
-
-      <% unless controller_name == "userdashboards" || controller_name == "sends" || controller_name == "success" %>
-        <%= render 'shared/header' %>
-      <% end %>
-        <%= yield %>
+      <%= yield %>
       <%= render 'shared/footer' %>
+
       <%= javascript_pack_tag 'main', 'data-turbolinks-track': 'reload' %>
     </div>
   </body>
 </html>
+
