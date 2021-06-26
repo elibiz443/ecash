@@ -6,5 +6,5 @@ class User < ApplicationRecord
 	validates :phone_no, uniqueness: true, presence: true
 	validates :email, uniqueness: true, presence: true
 
-	has_many :userdashboards
+	has_many :dashboards
 end

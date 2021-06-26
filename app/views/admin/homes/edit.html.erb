@@ -1,0 +1,25 @@
+<section class="section-margin--small">
+  <div class="container" style="background-color: #dfe1fc;padding: 30px;">
+    <div class="row">
+
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+
+        <h5>Edit Home Detail</h5>
+
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+
+        <%= form_with(model:[:admin, @home], local: true) do |f| %>
+          <div class='form-group'>
+            <%= f.text_field :detail, class: 'form-control', value: @home.detail %>
+          </div>
+          
+          <%= f.submit 'Update!', class: 'btn btn-primary' %>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</section>

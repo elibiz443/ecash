@@ -1,0 +1,40 @@
+<section class="section-margin--small">
+
+  <div class="container" style="background-color: #dfe1fc;padding: 30px;">
+    <div class="row">
+
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+
+        <h5>Add New Home Detail</h5>
+        <h5 style="font-size: 15px;">
+          <a href="/admin/homes"><i class="fa fa-arrow-left"></i> Go Back</a>
+        </h5>
+
+        <% if @home.errors.any? %>
+          <div class='alert alert-danger'>
+            <p>Please correct the following errors:</p>
+            <ul>
+              <% @home.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+
+        <%= form_for Home.new, url: {action: "create"} do |f| %>
+          <div class='form-group'>
+            <%= f.text_field :detail, class: 'form-control', placeholder: 'Write Content' %>
+          </div>
+          
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</section>

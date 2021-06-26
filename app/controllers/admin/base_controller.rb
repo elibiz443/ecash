@@ -1,4 +1,7 @@
 class Admin::BaseController < ActionController::Base
+  include Pagy::Backend
+  include ApplicationHelper
+  
   layout "admin" 
 
 	protect_from_forgery with: :exception

@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+  include ApplicationHelper
+  
 	protect_from_forgery with: :exception
   before_action :require_valid_user!
 
@@ -11,7 +14,7 @@ class ApplicationController < ActionController::Base
   def require_valid_user!
     if current_user.nil?
       flash[:error] = 'You must be logged in to access that page!'
-      redirect_to '/home'
+      redirect_to '/homes'
     end
   end
 end

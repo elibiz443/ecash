@@ -1,13 +1,13 @@
-class HomeController < ApplicationController
+class HomesController < ApplicationController
   skip_before_action :require_valid_user!
   before_action :reset_session
 
   def index
-    @home = Home.all
+    @homes = Home.all
   end
 
   # def new
-  #   @home = Home.new
+  #   @homes = Home.new
   # end
 
   # def create
@@ -44,12 +44,12 @@ class HomeController < ApplicationController
   #   end
   # end
 
-  # private
-  #   def set_home
-  #     @home = Home.find(params[:id])
-  #   end
+  private
+    def set_home
+      @home = Home.find(params[:id])
+    end
 
-  #   def home_params
-  #     params.require(:home).permit(:detail)
-  #   end
+    def home_params
+      params.require(:home).permit(:detail)
+    end
 end

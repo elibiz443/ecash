@@ -37,3 +37,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'frontview'
+gem 'pagy'
+gem 'simple_form'

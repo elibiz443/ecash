@@ -22,16 +22,21 @@
   </head>
   <body>
     <div id="main-wrapper">
-      <% if controller_name == "dashboards" %>
+      <% if controller_name == "dashboards" || controller_name == "homes" %>
         <%= render 'shared/adminheader' %>
       <% end %>
 
-      <% unless controller_name == "dashboards" %>
+      <% unless controller_name == "dashboards" || controller_name == "homes" %>
         <%= render 'shared/admin_login_header' %>
       <% end %>
+        <%= yield %>
+      <% if controller_name == "dashboards" || controller_name == "homes" || controller_name == "sessions" || controller_name == "users" %>
+        <%= render 'shared/dashfooter' %>
+      <% end %>
 
-      <%= yield %>
-      <%= render 'shared/footer' %>
+      <% unless controller_name == "dashboards" || controller_name == "homes" || controller_name == "sessions" || controller_name == "users" %>
+        <%= render 'shared/footer' %>
+      <% end %>
 
       <%= javascript_pack_tag 'main', 'data-turbolinks-track': 'reload' %>
     </div>

@@ -1,14 +1,11 @@
-<!-- Content
-============================================= -->
+<!-- Content ================================= -->
 <div id="content" class="py-4">
   <div class="container">
     <div class="row"> 
-      <!-- Left Panel
-      ============================================= -->
+      <!-- Left Panel =================================== -->
       <aside class="col-lg-3"> 
         
-        <!-- Profile Details
-        =============================== -->
+        <!-- Profile Details =================== -->
         <div class="bg-white shadow-sm rounded text-center p-3 mb-4">
           <div class="profile-thumb mt-3 mb-4"> <img class="rounded-circle" src="/assets/profile.jpg" alt="">
             <div class="profile-thumb-edit custom-file bg-primary text-white" data-toggle="tooltip" title="Change Profile Picture"> <i class="fas fa-camera position-absolute"></i>
@@ -22,8 +19,7 @@
         </div>
         <!-- Profile Details End --> 
         
-        <!-- Need Help?
-        =============================== -->
+        <!-- Need Help? ================= -->
         <div class="bg-white shadow-sm rounded text-center p-3 mb-4">
           <div class="text-17 text-light my-3"><i class="fas fa-comments"></i></div>
           <h3 class="text-5 font-weight-400 my-4">Need Help?</h3>
@@ -35,12 +31,10 @@
       </aside>
       <!-- Left Panel End --> 
       
-      <!-- Middle Panel
-      ============================================= -->
+      <!-- Middle Panel ============================= -->
       <div class="col-lg-9"> 
         
-        <!-- Profile Completeness
-        =============================== -->
+        <!-- Profile Completeness ================ -->
         <div class="bg-white shadow-sm rounded p-4 mb-4">
           <h3>Admin Dashboard</h3>
           <% if flash[:success] %>
@@ -63,36 +57,96 @@
           </div>
         </div>
         <!-- Profile Completeness End --> 
-        
-        <!-- Info =============================== -->
+
+        <!-- Users =============================== -->
         <div class="bg-white shadow-sm rounded py-4 mb-4">
-          <h3 class="text-5 font-weight-400 d-flex align-items-center px-4 mb-4">Acount Info</h3>
-          
-          <!-- Transaction List
-          =============================== -->
-          <div class="transaction-list">
-            <div class="transaction-item px-4 py-3" data-toggle="modal" data-target="#transaction-detail">
-              <div class="row align-items-center flex-row">
-                <div class="col-2 col-sm-1 text-center"> 
-                  <span class="d-block text-4 font-weight-300">
-                    <%= admin_current_user.first_name %>
-                  </span> 
-                  <span class="d-block text-1 font-weight-300 text-uppercase">
-                    <%= admin_current_user.last_name %>
-                  </span> 
-                </div>
-                <div class="col col-sm-7"> 
-                  <span class="d-block text-4"><%= admin_current_user.email %></span> 
-                  <span class="text-muted">Not Yet Activated!</span> 
-                </div>
-              </div>
+          <h3 class="text-5 font-weight-400 d-flex align-items-center px-4 mb-4">Registered Users</h3>
+
+          <!-- Title ======================== -->
+          <div class="transaction-title py-2 px-4">
+            <div class="row font-weight-00">
+              <div class="col-2 col-sm-1 text-center"><span class="">Name</span></div>
+              <div class="col col-sm-7">Email</div>
+              <div class="col-3 col-sm-2 text-right">Edit</div>
             </div>
           </div>
+          <!-- Title End --> 
+          
+          <!-- Info List ===================== -->
+          <div class="transaction-list">
+            <div class="px-4 py-3">
+              <% @users.each do |user| %>
+                <div class="row align-items-center flex-row" style="border-bottom: 2px dotted #a1a3fe;padding-bottom: 10px;padding-top: 10px;">
+                  <div class="col-2 col-sm-1 text-center"> 
+                    <span class="d-block text-4 font-weight-300">
+                      <%= user.first_name %>
+                    </span>
+                    <span class="d-block text-1 font-weight-300 text-uppercase">
+                      <%= user.last_name %>
+                    </span> 
+                  </div>
+
+                  <div class="col col-sm-7"> 
+                    <span class="d-block text-4"><%= user.phone_no %></span> 
+                    <span class="text-muted"><%= user.balance %></span> 
+                  </div>
+                  
+                  <div class="col-3 col-sm-2 text-right text-4"> 
+                    <span class="text-nowrap">
+                      <a href="/admin/editusers"><i class="fas fa-edit"></i></a>
+                    </span> 
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <!-- Info List End --> 
         </div>
-        <!-- Info End --> 
+        <!-- Users End -->
+
+        <i><%= pagy_bootstrap_nav(@pagy).html_safe %></i>
+
+        <!-- Home =============================== -->
+        <div class="bg-white shadow-sm rounded py-4 mb-4" id="homeid">
+          <h3 class="text-5 font-weight-400 d-flex align-items-center px-4 mb-4">
+            Home Details
+          </h3>
+
+          <!-- Title ======================= -->
+          <div class="transaction-title py-2 px-4">
+            <div class="row font-weight-00">
+              <div class="col col-sm-7">&nbsp;&nbsp;&nbsp;Detail</div>
+            </div>
+          </div>
+          <!-- Title End --> 
+          
+          <!-- Info List ======================== -->
+          <div class="transaction-list">
+            <div class="px-4 py-3">
+              <% @homes.each do |home| %>
+                <div class="row align-items-center flex-row" style="border-bottom: 2px dotted #a1a3fe;padding-bottom: 10px;padding-top: 10px;">
+                  <span class="d-block text-4 font-weight-300">
+                    <%= home.id %>.
+                  </span>
+                  <div class="col col-sm-7"> 
+                    <span class="d-block text-4"><%= home.detail %></span> 
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <!-- Info List End --> 
+        </div>
+        <!-- Home End -->
+        <div>
+          <a href="/admin/homes"><i class="fas fa-dot-circle">  View More Details</i></a>
+        </div>
+
       </div>
       <!-- Middle Panel End --> 
     </div>
   </div>
 </div>
 <!-- Content end --> 
+
+

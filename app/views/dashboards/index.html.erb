@@ -1,5 +1,4 @@
-<!-- Content
-============================================= -->
+<!-- Content =========================================== -->
 <div id="content" class="py-4">
   <div class="container">
     <div class="row"> 
@@ -16,7 +15,7 @@
             </div>
           </div>
           <p class="text-3 font-weight-500 mb-2">
-          	Hello, <%= current_user.first_name %>
+            Hello, <%= current_user.first_name %>
           </p>
           <p class="mb-2"><a href="#" class="text-5 text-light" data-toggle="tooltip" title="Edit Profile"><i class="fas fa-edit"></i></a></p>
         </div>
@@ -56,10 +55,10 @@
         <!-- Profile Completeness
         =============================== -->
         <div class="bg-white shadow-sm rounded p-4 mb-4">
-        	<h3>Dashboard</h3>
-					<% if flash[:success] %>
-					  <div class='alert alert-success'><%= flash[:success] %></div>
-					<% end %>
+          <h3>Dashboard</h3>
+          <% if flash[:success] %>
+            <div class='alert alert-success'><%= flash[:success] %></div>
+          <% end %>
 
           <h3 class="text-5 font-weight-400 d-flex align-items-center mb-4">Profile Completeness<span class="border text-success rounded-pill font-weight-500 text-2 px-3 py-1 ml-2">90%</span></h3>
           <hr class="mb-4 mx-n4">
@@ -161,6 +160,7 @@
           
         </div>
         <!-- Info End --> 
+        <i><%= pagy_bootstrap_nav(@pagy).html_safe %></i>
       </div>
       <!-- Middle Panel End --> 
     </div>
