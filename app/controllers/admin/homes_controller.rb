@@ -2,11 +2,7 @@ class Admin::HomesController < Admin::BaseController
   before_action :set_admin_home, only: %i[ show edit update destroy ]
 
   def index
-    @homes = Home.all
     @pagy, @homes = pagy(Home.all.order('created_at ASC'), items: 4)
-  end
-
-  def show
   end
 
   def new

@@ -15,6 +15,14 @@ $('.primary-menu ul.navbar-nav li.dropdown, .login-signup ul.navbar-nav li.dropd
 	}
 });
 
+// Custom JS
+
+$(document).ready(function(){
+  $('input:checkbox').click(function() {
+    $('input:checkbox').not(this).prop('checked', false);
+  });
+});
+
 // When dropdown going off to the out of the screen.
 	$('.primary-menu .dropdown-menu, .login-signup .dropdown-menu').each(function() {
 		var menu = $('#header .header-row').offset();

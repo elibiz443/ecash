@@ -1,6 +1,9 @@
 class Admin::UsersController < Admin::BaseController
-  skip_before_action :require_valid_admin_user!
-  before_action :reset_session
+  before_action :set_admin_user, only: %i[ show edit update destroy ]
+
+  def index
+    @pagy, @admin_user = pagy(Admin::User.all.order('created_at ASC'), items: 3)
+  end
 
   def new
     @admin_user = Admin::User.new
@@ -10,31 +13,30 @@ class Admin::UsersController < Admin::BaseController
     @admin_user = Admin::User.new(admin_user_params)
 
     if @admin_user.save
-      session[:user_id] = @admin_user.id
-      flash[:success] =  'You have successfully created admin account!'
-      redirect_to '/admin/dashboards'
+      session[:admin_user_id] = @admin_user.id
+      flash[:success] =  'You have successfully created new user'
+      redirect_to '/admin/users'
     else
       render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @admin_user.update(admin_user_params)
-        format.html { redirect_to @admin_user, notice: "User was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_user.errors, status: :unprocessable_entity }
-      end
-    end
+    @admin_user = Admin::User.find(params[:id])
+    @admin_user.update(params.require(:admin_user).permit(:first_name, :last_name, :phone_no, :email, :balance, :admin))
+    flash[:success] =  'User Successfully Updated!'
+    redirect_to '/admin/users'
   end
 
   def destroy
-    @admin_user.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+    @admin_user = Admin::User.find(params[:id])
+    if (admin_current_user == @admin_user) && (@admin_user.admin == true)
+      flash[:error] = "You can't delete admin or own account!"
+      redirect_to '/admin/users'
+    else
+      @admin_user.destroy
+      flash[:success] =  'User Successfully Deleted!'
+      redirect_to '/admin/users'
     end
   end
 
@@ -44,6 +46,6 @@ class Admin::UsersController < Admin::BaseController
     end
 
     def admin_user_params
-      params.require(:admin_user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:admin_user).permit(:first_name, :last_name, :phone_no, :email, :balance, :admin, :password, :password_confirmation)
     end
 end

@@ -15,25 +15,9 @@ ActiveRecord::Schema.define(version: 2021_06_25_171345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admin_dashboards", force: :cascade do |t|
-    t.string "detail"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "admin_users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_admin_users_on_email", unique: true
-  end
-
   create_table "dashboards", force: :cascade do |t|
     t.string "detail"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,19 +35,13 @@ ActiveRecord::Schema.define(version: 2021_06_25_171345) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "userdashboards", force: :cascade do |t|
-    t.string "detail"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "phone_no"
     t.string "email"
     t.decimal "balance", default: "0.0"
+    t.boolean "admin", default: false
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

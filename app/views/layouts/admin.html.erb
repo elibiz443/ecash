@@ -26,7 +26,7 @@
         <%= render 'shared/adminheader' %>
       <% end %>
 
-      <% unless controller_name == "dashboards" || controller_name == "homes" %>
+      <% unless controller_name == "dashboards" || controller_name == "homes" || controller_name == "users" %>
         <%= render 'shared/admin_login_header' %>
       <% end %>
         <%= yield %>

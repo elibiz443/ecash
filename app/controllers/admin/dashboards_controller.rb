@@ -4,7 +4,7 @@ class Admin::DashboardsController < Admin::BaseController
   def index
     @pagy, @dashboards = pagy(Dashboard.all.order('created_at ASC'), items: 2)
     @pagy, @homes = pagy(Home.all.order('created_at ASC'), items: 2)
-    @pagy, @users = pagy(User.all.order('created_at ASC'), items: 2)
+    @pagy, @admin_users = pagy(Admin::User.all.order('created_at ASC'), items: 2)
   end
 
   # def show

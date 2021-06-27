@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users, only: [:new, :create]
+    resources :users
     resources :sessions, only: [:create]
     resources :dashboards
     resources :editusers
